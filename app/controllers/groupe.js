@@ -33,7 +33,7 @@ module.exports = class groups {
 
         this.app.post('/groups/deletegroup', (req, res) => {
             try {
-                this.groupModel.deleteOne({ _id: req.body.id }).then((group) => {
+                this.groupModel.findOneAndDelete({ _id: req.body.id }).then((group) => {
                     console.log(group)
                     if (group.deletedCount === 0) {
                         res.status(404).json({
@@ -58,7 +58,7 @@ module.exports = class groups {
         });
         this.app.post('/groups/updategroup', (req, res) => {
             try {
-                this.groupModel.findOneAndUpdate({
+                this.groupModel.findByidAndUpdate({
                     _id: req.body.id
                 }, req.body, {
                     new: true,
