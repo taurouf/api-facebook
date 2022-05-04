@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Schema = new mongoose.Schema(
+const billetterieSchema = new mongoose.Schema(
   {
     nom: {
       type: String,
@@ -33,4 +33,4 @@ const Schema = new mongoose.Schema(
   },
 });
 
-module.exports = Schema;
+module.exports = billetterieSchema;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Schema = new mongoose.Schema(
+const evenementSchema = new mongoose.Schema(
   {
     Nom: {
       type: String,
@@ -25,6 +25,9 @@ const Schema = new mongoose.Schema(
     Photo: {
       type: String,
     },
+    Private:{
+      type: Boolean
+    }
   },
   {
     collection: "evenement",
@@ -41,4 +44,4 @@ const Schema = new mongoose.Schema(
   },
 });
 
-module.exports = Schema;
+module.exports = evenementSchema;

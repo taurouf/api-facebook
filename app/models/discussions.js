@@ -1,14 +1,25 @@
 const mongoose = require("mongoose");
 
-const Schema = new mongoose.Schema(
+const discussionSchema = new mongoose.Schema(
   {
-    nom: String,
-    montant: Number,
-    quantite: Number,
+    nom: {
+      type: String,
+      required: true,
+    },
+    montant: {
+      type: Number,
+      required: true,
+    },
+    quantite: {
+      type: Number,
+      min: 1,
+      max: 50,
+      required: true,
+    },
     personneExterieure: String,
   },
   {
-    collection: "users",
+    collection: "discussion",
     // Bien optimiser la requête
     minimize: false,
     versionKey: false,
@@ -22,4 +33,4 @@ const Schema = new mongoose.Schema(
   },
 });
 
-module.exports = Schema;
+module.exports = discussionSchema;
