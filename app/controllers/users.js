@@ -85,7 +85,7 @@ const User = class User {
     * update
     */
   update() {
-    this.app.put('/user/:id', (req, res) => {
+    this.app.patch('/user/:id', (req, res) => {
       try {
         if (!req.params.id) {
           res.status(400).json({

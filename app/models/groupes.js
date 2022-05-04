@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const groupeSchema = new mongoose.Schema(
+
+const groupeSchema = new Schema(
   {
     Nom: {
       type: String,
